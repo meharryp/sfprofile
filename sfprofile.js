@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         SF Checker
 // @namespace    meharryp.xyz
-// @version      1.0.
+// @version      1.0.2
 // @description  View a scriptfodder users profile information on their steam profile page.
-// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
 // @author       meharryp
+// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
 // @match        http://steamcommunity.com/id/*
 // @match        http://steamcommunity.com/profiles/*
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
@@ -60,13 +60,7 @@
 					onload: function(res){
 						data = JSON.parse(res.responseText);
 
-						console.log(data);
-
-						var html = "";
-
-						console.log(bans);
-
-                        html += `
+                        var html = `
 						<b>Reputation: </b>${parseInt(data.user.scripts_rep) + parseInt(data.user.jobs_rep)}<br>
 						<b>Registered </b>${$.timeago(new Date(parseInt(data.user.dateRegistered) * 1000))}<br>
 						<b>Last online </b>${$.timeago(new Date(parseInt(data.user.lastAction) * 1000))}<br>
@@ -123,12 +117,14 @@
 												break;
 										}
 
-										html += "</li></ul><br>";
+										html += `</li></ul>`;
 									}
 								}
 							}
 
 						}
+
+                        html += `<br><a href="https://scriptfodder.com/users/view/${steamid}" target="_blank">Scriptfodder Profile</a>`;
 						$("#sfholder").html(html);
 					}
 				});
