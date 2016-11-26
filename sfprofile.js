@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         SF Checker
 // @namespace    meharryp.xyz
-// @version      1.0
+// @version      1.0.
 // @description  View a scriptfodder users profile information on their steam profile page.
+// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
 // @author       meharryp
 // @match        http://steamcommunity.com/id/*
 // @match        http://steamcommunity.com/profiles/*
