@@ -1,5 +1,5 @@
 # sfprofile
-Shows scriptfodder information on a users steam profile.
+Shows gmodstore information on a users steam profile.
 
 # Screenshots
 ![aa](http://i.imgur.com/lpNfPYr.png)
