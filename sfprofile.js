@@ -124,7 +124,7 @@
 
 						}
 
-                        html += `<br><a href="https://gmodstore.com/users/view/${steamid}" target="_blank">Scriptfodder Profile</a>`;
+                        html += `<br><a href="https://gmodstore.com/users/view/${steamid}" target="_blank">gmodstore Profile</a>`;
 						$("#sfholder").html(html);
 					}
 				});
