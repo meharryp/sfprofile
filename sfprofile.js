@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gmodstore Checker
 // @namespace    meharryp.xyz
-// @version      1.0.3
+// @version      1.0.3.1
 // @description  View a scriptfodder users profile information on their steam profile page.
 // @author       meharryp
 // @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
