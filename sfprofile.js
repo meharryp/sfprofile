@@ -9,7 +9,7 @@
 // @match        http://steamcommunity.com/profiles/*
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require      http://timeago.yarp.com/jquery.timeago.js
-// @connect      scriptfodder.com
+// @connect      gmodstore.com
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
@@ -46,7 +46,7 @@
 
 		// Get users bans
 		GM_xmlhttpRequest({
-			url: "https://scriptfodder.com/api/users/banned/" + steamid,
+			url: "https://gmodstore.com/api/users/banned/" + steamid,
 			method: "GET",
 			onload: function(res){
 				bans = JSON.parse(res.responseText).bans;
@@ -55,7 +55,7 @@
 
 				// Get user data
 				GM_xmlhttpRequest({
-					url: "https://scriptfodder.com/api/users/search/steam64/" + steamid,
+					url: "https://gmodstore.com/api/users/search/steam64/" + steamid,
 					method: "GET",
 					onload: function(res){
 						data = JSON.parse(res.responseText);
@@ -124,7 +124,7 @@
 
 						}
 
-                        html += `<br><a href="https://scriptfodder.com/users/view/${steamid}" target="_blank">Scriptfodder Profile</a>`;
+                        html += `<br><a href="https://gmodstore.com/users/view/${steamid}" target="_blank">Scriptfodder Profile</a>`;
 						$("#sfholder").html(html);
 					}
 				});
