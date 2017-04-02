@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         SF Checker
+// @name         gmodstore Checker
 // @namespace    meharryp.xyz
-// @version      1.0.2
+// @version      1.0.3
 // @description  View a scriptfodder users profile information on their steam profile page.
 // @author       meharryp
 // @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
@@ -21,7 +21,7 @@
 
 	$(".profile_leftcol").prepend(`
 		<div class="profile_customization">
-			<div class="profile_customization_header ellipsis">Scriptfodder Details</div>
+			<div class="profile_customization_header ellipsis">gmodstore Details</div>
 			<div class="profile_customization_block">
 				<div class="customtext_showcase">
 					<div class="showcase_content_bg showcase_notes" id="sfholder"></div>
