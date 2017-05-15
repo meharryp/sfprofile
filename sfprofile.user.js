@@ -4,7 +4,7 @@
 // @version      1.0.4
 // @description  View a scriptfodder users profile information on their steam profile page.
 // @author       meharryp
-// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
+// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.user.js
 // @match        http://steamcommunity.com/id/*
 // @match        http://steamcommunity.com/profiles/*
 // @match        https://steamcommunity.com/id/*
