@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         gmodstore Checker
 // @namespace    meharryp.xyz
-// @version      1.0.3.1
+// @version      1.0.4
 // @description  View a scriptfodder users profile information on their steam profile page.
 // @author       meharryp
 // @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.js
 // @match        http://steamcommunity.com/id/*
 // @match        http://steamcommunity.com/profiles/*
-// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// @match        https://steamcommunity.com/id/*
+// @match        https://steamcommunity.com/profiles/*
+// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require      http://timeago.yarp.com/jquery.timeago.js
 // @connect      gmodstore.com
 // @grant        GM_xmlhttpRequest
@@ -49,6 +51,7 @@
 			url: "https://gmodstore.com/api/users/banned/" + steamid,
 			method: "GET",
 			onload: function(res){
+                console.log(res.responseText);
 				bans = JSON.parse(res.responseText).bans;
 
 				console.log(bans);
@@ -75,12 +78,13 @@
 								<br>
 								<b style="color:red">Banned ${$.timeago(new Date(parseInt(ban.ban_starttime) * 1000))}, ban ends in ${(parseInt(ban.ban_endtime) !== 0 && $.timeago(new Date(ban.ban_endtime)) || "Never")}.</b><ul>
 								<li><i>Reason:</i> ${ban.ban_reason}<br></li>
-								<li><i>Banned from:</i> `;
+								</ul><i>Banned from:</i><ul>`;
 
                                 console.log(html);
 
 								for (var i in ban.attributes){
 									if (parseInt(ban.attributes[i])){
+                                        html += `<li>`;
 										switch (i){
 											case "ban_create_appeal":
 												html += "Creating ban appeals";
@@ -117,9 +121,10 @@
 												break;
 										}
 
-										html += `</li></ul>`;
+										html += `</li>`;
 									}
-								}
+                                }
+                                html += `</ul>`;
 							}
 
 						}
