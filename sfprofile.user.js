@@ -1,7 +1,7 @@
 	// ==UserScript==
 	// @name         gmodstore Checker
 	// @namespace    meharryp.xyz
-	// @version      1.1.1
+	// @version      1.1.2
 	// @description  View a scriptfodder users profile information on their steam profile page.
 	// @author       meharryp
 	// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.user.js
@@ -15,9 +15,14 @@
 
 	(function() {
 		'use strict';
-
+	
+		var apikey = ""; // ENTER YOUR API KEY HERE OR THE SCRIPT WONT WORK!!!
 		var bans = {};
 		var data = {};
+		
+		if (!apikey || apikey == ""){
+			alert("SFProfile: You haven't set an API key! Edit the script file and add one to keep using this.");
+		}
 
 		$(".profile_leftcol").prepend(`
 			<div class="profile_customization">
@@ -44,7 +49,7 @@
 
 				// Get user data
 				GM_xmlhttpRequest({
-					url: "https://gmodstore.com/api/users/search/steam64/" + steamid,
+					url: "https://gmodstore.com/api/users/search/steam64/" + steamid + "?api_key=" + apikey,
 					method: "GET",
 					onload: function(res){
 					data = JSON.parse(res.responseText);
