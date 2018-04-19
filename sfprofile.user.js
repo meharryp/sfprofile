@@ -1,7 +1,7 @@
 	// ==UserScript==
 	// @name         gmodstore Checker
 	// @namespace    meharryp.xyz
-	// @version      1.1.2
+	// @version      1.1.3
 	// @description  View a scriptfodder users profile information on their steam profile page.
 	// @author       meharryp
 	// @downloadURL  https://raw.githubusercontent.com/meharryp/sfprofile/master/sfprofile.user.js
@@ -39,7 +39,7 @@
 
 			// Get users bans
 		GM_xmlhttpRequest({
-			url: "https://gmodstore.com/api/users/banned/" + steamid,
+			url: "https://gmodstore.com/api/users/banned/" + steamid + "?api_key=" + apikey,
 			method: "GET",
 			onload: function(res){
 			        console.log(res.responseText);
